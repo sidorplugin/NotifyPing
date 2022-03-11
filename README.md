@@ -49,6 +49,7 @@
 | -i, --interval             | интервал времени в минутах с которым осуществляется опрос (по умолчанию 5)                                      |
 
 Например:
+
 Linux:
 
   	python3 notify_ping.py --address google.com --smtpaddr smtp.mail.ru --email from@mail.ru --pswd email_password --to to@mail.ru --interval 5
