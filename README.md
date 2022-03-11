@@ -5,13 +5,39 @@
 
 1.  Установить Python
 
-		`https://www.python.org/downloads/`
+		https://www.python.org/downloads/
 
 2.  Установить библиотеку chardet
 
-		`pip install chardet`
+		pip install chardet
 
 3.  Для запуска воспользоваться ярлыком `run_notify_ping`, установив в его свойствах свои параметры.
+
+### Сборка в Linux ###
+1.  Установить Python
+
+		sudo apt update
+		sudo apt install python3.6
+
+2.  Установить pip
+
+		sudo apt install python3-pip
+
+3.  Установить библиотеку chardet
+
+		pip install chardet
+
+4.  Отредактируйте скрипт `run_notify_ping.sh` установив в нём свои параметры.
+
+5.  Назначаем права на выполнение
+
+		sudo chmod ugo+rwx ./run_notify_ping.sh
+
+6.  Запуск скрипта
+
+		./run_notify_ping.sh
+
+Параметры:
 
 | Аргумент                   | Действие                                                                                                        |
 |----------------------------|-----------------------------------------------------------------------------------------------------------------|
@@ -25,41 +51,17 @@
 Например:
 Linux:
 
-  	`python3 notify_ping.py --address google.com --smtpaddr smtp.mail.ru --email from@mail.ru --pswd email_password --to to@mail.ru --interval 5`
+  	python3 notify_ping.py --address google.com --smtpaddr smtp.mail.ru --email from@mail.ru --pswd email_password --to to@mail.ru --interval 5
 
 Windows:
 
-  	`python notify_ping.py --address google.com --smtpaddr smtp.mail.ru --email from@mail.ru --pswd email_password --to to@mail.ru --interval 5`
+  	python notify_ping.py --address google.com --smtpaddr smtp.mail.ru --email from@mail.ru --pswd email_password --to to@mail.ru --interval 5
 
 Будет опрашивать google.com каждые 5 минут, в случае обрыва/восстановления соединения (не отправляются пакеты с помощью ping) с почтового ящика from@mail.ru
 на to@mail.ru будет прислано письмо с сообщением.
 
 ### ВНИМАНИЕ! ###
 Уведомление на почту НЕ будет отправлено в случае проблем с сетью у компьютера с которого запускается скрипт. Будет выведено соответствующее сообщение в консоль.
-
-### Сборка в Linux ###
-1.  Установить python
-
-		`sudo apt update`
-		`sudo apt install python3.6`
-
-2.  Установить pip
-
-		`sudo apt install python3-pip`
-
-3.  Установить библиотеку chardet
-
-		`pip install chardet`
-
-4.  Отредактируйте скрипт `run_notify_ping.sh` установив в нём свои параметры.
-
-5.  Назначаем права на выполнение
-
-		`sudo chmod ugo+rwx ./run_notify_ping.sh`
-
-6.  Запуск скрипта
-
-		`./run_notify_ping.sh`
 
 ## Примечание: ##
 Особенности работы с почтовым ящиком на mail.ru.
